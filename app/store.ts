@@ -4,6 +4,8 @@ import { Mission } from './types';
 type MissionStore = {
     mission: Mission;
     setMission: (mission: Mission) => void;
+    result: Mission[];
+    setResult: (missions: Mission[]) => void;
 }
 
 export const useMissionStore = create<MissionStore>((set) => ({
@@ -70,5 +72,7 @@ export const useMissionStore = create<MissionStore>((set) => ({
         ships: [],
         timeline: {}
     },
-    setMission: (mission: Mission) => set({ mission })
+    setMission: (mission: Mission) => set({ mission }),
+    result: [],
+    setResult: (missions: Mission[]) => set({ result: missions })
 }))
